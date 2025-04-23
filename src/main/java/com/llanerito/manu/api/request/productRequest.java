@@ -10,8 +10,10 @@ import lombok.experimental.SuperBuilder;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class productRequest {
+public class ProductRequest {
+    private String urlImage;
     private String name;
     private String description;
     private String price;
+    private Long idCategory;
 }

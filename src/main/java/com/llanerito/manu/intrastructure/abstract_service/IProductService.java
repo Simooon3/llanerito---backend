@@ -1,9 +1,8 @@
 package com.llanerito.manu.intrastructure.abstract_service;
 
-import com.llanerito.manu.api.request.productRequest;
-import com.llanerito.manu.api.response.productResponse;
-import com.llanerito.manu.intrastructure.abstract_service.services.CrudDefault;
+import com.llanerito.manu.api.request.ProductRequest;
+import com.llanerito.manu.api.response.ProductResponse;
 
-public interface IProductService extends CrudDefault<productRequest, productResponse, Long>{
+public interface IProductService extends CrudDefault<ProductRequest, ProductResponse, Long>{
     public final String FIELD_BY_SORT = "name";
 }

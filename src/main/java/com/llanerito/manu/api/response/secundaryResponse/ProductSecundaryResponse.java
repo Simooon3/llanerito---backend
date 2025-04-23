@@ -1,6 +1,5 @@
-package com.llanerito.manu.api.response;
+package com.llanerito.manu.api.response.secundaryResponse;
 
-import com.llanerito.manu.api.response.secundaryResponse.CategorySecundaryResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductResponse {
+public class ProductSecundaryResponse {
     private Long id;
-    private String urlImage;
     private String name;
+    private String urlImage;
     private String description;
     private String price;
-    private CategorySecundaryResponse category;
 }

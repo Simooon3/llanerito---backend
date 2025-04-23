@@ -9,7 +9,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class categoryRequest {
+public class CategoryRequest {
     private String name;
-    private int number_products;
 }
