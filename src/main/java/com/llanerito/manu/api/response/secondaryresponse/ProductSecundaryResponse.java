@@ -1,4 +1,4 @@
-package com.llanerito.manu.api.response.secundaryResponse;
+package com.llanerito.manu.api.response.secondaryresponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategorySecundaryResponse {
+public class ProductSecundaryResponse {
     private Long id;
     private String name;
-    private int numberProducts;
+    private String urlImage;
+    private String description;
+    private String price;
 }

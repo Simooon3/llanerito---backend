@@ -2,10 +2,8 @@ package com.llanerito.manu.api.controllers;
 
 import java.util.Objects;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,24 +24,21 @@ import com.llanerito.manu.utils.SortType;
 
 import lombok.AllArgsConstructor;
 
-@Controller
 @RestController
-// @Tag(name = "Category")
 @RequestMapping(path = "category")
 @AllArgsConstructor
 @CrossOrigin(origins = "http://127.0.0.1:5501")
 public class CategoryController {
-    
-    @Autowired
+
     private final CategoryService categoryService;
-    
+
     @PostMapping
-    public ResponseEntity<CategoryResponse> create(@RequestBody CategoryRequest CategoryRequest){
-        return ResponseEntity.ok(this.categoryService.create(CategoryRequest));
+    public ResponseEntity<CategoryResponse> create(@RequestBody CategoryRequest categoryRequest) {
+        return ResponseEntity.ok(this.categoryService.create(categoryRequest));
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<CategoryResponse> getById(@PathVariable Long id){
+    public ResponseEntity<CategoryResponse> getById(@PathVariable Long id) {
         return ResponseEntity.ok(this.categoryService.getById(id));
     }
 
@@ -52,21 +47,19 @@ public class CategoryController {
         @RequestParam(defaultValue = "1") int page,
         @RequestParam(defaultValue = "10") int size,
         @RequestHeader(required = false) SortType sortType
-    ){
+    ) {
         if (Objects.isNull(sortType)) sortType = SortType.NONE;
         return ResponseEntity.ok(this.categoryService.getAll(page - 1, size, sortType));
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<CategoryResponse> update(@Validated @RequestBody CategoryRequest categoryRequest, @PathVariable Long id){
+    public ResponseEntity<CategoryResponse> update(@Validated @RequestBody CategoryRequest categoryRequest, @PathVariable Long id) {
         return ResponseEntity.ok(this.categoryService.update(categoryRequest, id));
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.categoryService.delete(id);
         return ResponseEntity.noContent().build();
     }
-
-
 }

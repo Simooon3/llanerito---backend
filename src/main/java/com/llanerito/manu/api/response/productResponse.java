@@ -1,6 +1,7 @@
 package com.llanerito.manu.api.response;
 
-import com.llanerito.manu.api.response.secundaryResponse.CategorySecundaryResponse;
+import com.llanerito.manu.api.response.secondaryresponse.CategorySecundaryResponse;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

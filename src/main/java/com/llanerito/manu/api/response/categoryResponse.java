@@ -2,7 +2,7 @@ package com.llanerito.manu.api.response;
 
 import java.util.List;
 
-import com.llanerito.manu.api.response.secundaryResponse.ProductSecundaryResponse;
+import com.llanerito.manu.api.response.secondaryresponse.ProductSecundaryResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
